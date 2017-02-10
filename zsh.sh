@@ -10,6 +10,6 @@ ssh_server=$(echo $param|awk -F '|' '{print $1}')
 port=$(echo $param|awk -F '|' '{print $2}')
 username=$(echo $param|awk -F '|' '{print $3}')
 password=$(echo $param|awk -F '|' '{print $4}')
+listen_port=$(echo $param|awk -F '|' '{print $5}')
 
-
-./bin/sshpass -p $password ./bin/obfuscated-ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -C2TNv -l $username -p $port -D 7070 $ssh_server -Z usassh
+./bin/sshpass -p $password ./bin/obfuscated-ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -C2TNv -l $username -p $port -D $listen_port $ssh_server -Z usassh

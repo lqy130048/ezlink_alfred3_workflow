@@ -184,9 +184,9 @@ def main(wf):
     userinfo = load_user()
     vpn_server = VPNServer()
     
-    if None == userinfo:
+    if None == userinfo or 3!=len(userinfo):
         wf.add_item(title="请设置VPN账号信息",
-                        subtitle="使用vpnset命令设置，例：vpnset username|password",
+                        subtitle="使用vpnset命令设置，例：vpnset 用户名|密码|SSH监听端口",
                         valid=True,
                         largetext="test4",
                         icon="vpn.ico")
@@ -215,7 +215,7 @@ def main(wf):
                         icon="vpn.ico")
             for server_ip, server_info in server_list.items():
                 sub_title = "IP: %s\t(%s ms)" % (server_ip, server_info[DELAY])
-                arg = "%s|%s|%s|%s" % (server_ip, server_info[SERVER_SSH_PORT], userinfo[0], userinfo[1])
+                arg = "%s|%s|%s|%s|%s" % (server_ip, server_info[SERVER_SSH_PORT], userinfo[0], userinfo[1], userinfo[2])
                 wf.add_item(title=server_info[0],
                             subtitle=sub_title,
                             arg=arg,

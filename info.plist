@@ -150,7 +150,7 @@ with open("pass.txt", "w") as f:
 				<key>keyword</key>
 				<string>vpnset</string>
 				<key>subtext</key>
-				<string>格式: username|password</string>
+				<string>格式: 用户名|密码|SSH本地监听端口</string>
 				<key>text</key>
 				<string>设置VPN账号信息</string>
 				<key>withspace</key>
