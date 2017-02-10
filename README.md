@@ -1,9 +1,11 @@
 # ezlink__alfred3_workflow
-ezlink vpn连接插件 
+ezlink vpn连接workflow
 
 ## 安装：
 
 workflow是用python写的，需要python2.7的运行环境，请自行安装。
+
+下载release里面打包好的VPN.alfredworkflow,双击导入 Alfred3
 
 ## root权限说明：
 
